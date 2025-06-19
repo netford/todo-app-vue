@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
+import type { RootState } from '@/types'
 import TaskForm from '@/components/TaskForm.vue'
 import TaskFilters from '@/components/TaskFilters.vue'
 import TaskList from '@/components/TaskList.vue'
 
 // Подключение Vuex store
-const store = useStore()
+const store = useStore<RootState>()
 
 // Вычисляемые свойства для отслеживания состояния
 const error = computed(() => store.state.tasks.error)

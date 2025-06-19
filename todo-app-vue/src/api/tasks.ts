@@ -5,9 +5,27 @@ const API_DELAY = 800;
 
 // Мокированные данные для демонстрации
 const mockTasks: Task[] = [
-  { id: 1, title: 'Изучить Vue 3 Composition API', completed: false },
-  { id: 2, title: 'Настроить Vuex store', completed: true },
-  { id: 3, title: 'Создать компоненты для задач', completed: false },
+  { 
+    id: 1, 
+    title: 'Изучить Vue 3 Composition API', 
+    completed: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  },
+  { 
+    id: 2, 
+    title: 'Настроить Vuex store', 
+    completed: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  },
+  { 
+    id: 3, 
+    title: 'Создать компоненты для задач', 
+    completed: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  },
 ];
 
 // Хранилище в памяти (имитация базы данных)
@@ -48,6 +66,8 @@ export const tasksAPI = {
       id: nextId++,
       title: taskData.title.trim(),
       completed: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     };
 
     tasksStorage.push(newTask);
@@ -71,6 +91,7 @@ export const tasksAPI = {
     const updatedTask = {
       ...tasksStorage[taskIndex],
       ...updateData,
+      updatedAt: new Date().toISOString()
     };
 
     // Валидация названия при обновлении

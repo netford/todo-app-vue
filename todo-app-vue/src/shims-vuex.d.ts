@@ -7,8 +7,8 @@ declare module '@vue/runtime-core' {
   }
 }
 
-// Типизация для useStore() в Composition API
+// Модуль расширения для типизации useStore
 declare module 'vuex' {
-  export * from 'vuex/types/index.d.ts'
-  export { Store, useStore } from 'vuex/types/index.d.ts'
+  export { Store } from 'vuex'
+  export function useStore<S = any>(key?: string): Store<S>
 }
