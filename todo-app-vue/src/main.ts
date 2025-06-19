@@ -1,6 +1,15 @@
-import './assets/main.css'
+import { createApp } from 'vue';
+import App from './App.vue';
+import { store } from './store';
 
-import { createApp } from 'vue'
-import App from './App.vue'
+// Импорт базовых стилей
+import './assets/main.css';
 
-createApp(App).mount('#app')
+// Создание и настройка Vue приложения
+const app = createApp(App);
+
+// Подключение Vuex store
+app.use(store);
+
+// Монтирование приложения
+app.mount('#app');
