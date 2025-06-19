@@ -20,6 +20,7 @@ export enum TasksActions {
   DELETE_TASK = 'DELETE_TASK',
   TOGGLE_TASK = 'TOGGLE_TASK',
   SET_FILTER = 'SET_FILTER',
+  CLEAR_ALL_TASKS = 'CLEAR_ALL_TASKS',
 }
 
 // Типы геттеров для модуля задач

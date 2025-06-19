@@ -1,11 +1,12 @@
-import { createStore } from 'vuex';
-import type { RootState } from '@/types';
-import tasksModule from './modules/tasks';
+// @ts-ignore
+import { createStore } from 'vuex'
+import tasks from './modules/tasks'
+import type { RootState } from '@/types'
 
 // Создание и настройка Vuex store
 export const store = createStore<RootState>({
   modules: {
-    tasks: tasksModule,
+    tasks
   },
   
   // Строгий режим - предупреждает об изменении состояния вне мутаций

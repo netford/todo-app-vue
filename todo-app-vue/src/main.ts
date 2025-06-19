@@ -11,5 +11,8 @@ const app = createApp(App);
 // Подключение Vuex store
 app.use(store);
 
+// Предоставляем store для inject
+app.provide('$store', store);
+
 // Монтирование приложения
 app.mount('#app');
